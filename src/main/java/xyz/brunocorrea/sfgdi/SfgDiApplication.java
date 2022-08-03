@@ -1,10 +1,13 @@
 package xyz.brunocorrea.sfgdi;
 
+import com.brunocorrea.aux.OutsideController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import xyz.brunocorrea.sfgdi.controllers.*;
 
+@ComponentScan(basePackages = {"xyz.brunocorrea.sfgdi", "com.brunocorrea.aux"})
 @SpringBootApplication
 public class SfgDiApplication {
 
@@ -33,6 +36,11 @@ public class SfgDiApplication {
 
         ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
         System.out.println(constructorInjectedController.getGreeting());
+
+        System.out.println("-------- Controller Outside Main Package");
+
+        OutsideController outsideController = (OutsideController) ctx.getBean("outsideController");
+        System.out.println(outsideController.sayHello());
     }
 
 }
