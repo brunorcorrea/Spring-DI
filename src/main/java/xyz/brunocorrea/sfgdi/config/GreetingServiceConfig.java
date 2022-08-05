@@ -19,7 +19,6 @@ import xyz.brunocorrea.sfgdi.services.PrimaryGreetingService;
 import xyz.brunocorrea.sfgdi.services.PropertyGreetingService;
 import xyz.brunocorrea.sfgdi.services.SetterGreetingService;
 
-@PropertySource("classpath:datasource.properties")
 @ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {
